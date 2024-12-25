@@ -21,7 +21,7 @@ export const AccountCard = ({ account, onAddCash }) => {
     return (
         <div className="account-container">
             <div className={account.accountType === 'INDIVIDUAL' ? 'card-i' : 'card-c'}>
-                <div className={account.accountType === 'INDIVIDUAL' ? 'j-bank-i' : 'j-bank-c'}>PetroffBank</div>
+                <div className={account.accountType === 'INDIVIDUAL' ? 'j-bank-i' : 'j-bank-c'}>PETROFF BANK</div>
                 <div className="card-number">{formatCardNumber(account.number)}</div>
                 <div className="card-details">
                     <span>MM/YY: {formattedDate}</span>
