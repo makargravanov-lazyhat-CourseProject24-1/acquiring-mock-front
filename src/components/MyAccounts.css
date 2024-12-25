@@ -11,7 +11,12 @@
     gap: 20px;
 }
 
+.create-account-button{
+    margin-left: 15pt ;
+}
+
 .account-type-selector {
+    margin-right:460pt;
     display: flex;
     gap: 20px;
 }
@@ -26,7 +31,18 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.card {
+.card-i {
+    background: linear-gradient(45deg, #ea8e00, #FDDB2D);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-c {
     background: linear-gradient(45deg, #1a1a1a, #4a4a4a);
     color: white;
     padding: 20px;
@@ -39,6 +55,7 @@
 }
 
 .card-number {
+    margin-top: 90pt;
     font-size: 20px;
     letter-spacing: 2px;
 }
@@ -67,12 +84,22 @@
 
 .add-cash {
     display: flex;
-    gap: 10px;
+    gap: 5px;
     align-items: center;
 }
+.add-cash-button {
+    position: absolute;
+    margin-top: 110pt;
+    margin-left: 44%;
+    width: 100pt;
+}
+
 
 .add-cash input {
-    width: 150px;
+    position: absolute;
+    margin-top: 40pt;
+    margin-left: 44%;
+    width: 120pt;
 }
 
 .no-accounts {

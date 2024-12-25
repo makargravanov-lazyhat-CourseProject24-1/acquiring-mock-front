@@ -1,4 +1,5 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
+import "./MyAccounts.css";
 
 export const AccountCard = ({ account, onAddCash }) => {
     const [amount, setAmount] = useState('');
@@ -14,40 +15,41 @@ export const AccountCard = ({ account, onAddCash }) => {
 
     return (
         <div className="account-container">
-            <div className="card">
+            <div className={account.accountType === 'INDIVIDUAL' ? 'card-i' : 'card-c'}>
                 <div className="card-number">{account.number}</div>
                 <div className="card-details">
-                    <span>Valid thru: {formattedDate}</span>
+                    <span>MM/YY: {formattedDate}</span>
                     <span>CVV: {account.cvv}</span>
                 </div>
             </div>
             <div className="account-info">
-                <div className="balance">Balance: ${account.balance.toFixed(2)}</div>
+                <div className="balance">{account.balance.toFixed(2)}₽</div>
                 <div className="account-type">
-                    {account.accountType === 'INDIVIDUAL' ? 'Personal Account' : 'Corporate Account'}
+                    {account.accountType === 'INDIVIDUAL' ? 'Личный счёт' : 'Юридический счёт'}
                 </div>
                 <div className="add-cash">
+                    <button className={"add-cash-button"} onClick={handleAddCash}>Пополнить счёт</button>
                     <input
                         type="number"
                         value={amount}
                         onChange={(e) => setAmount(e.target.value)}
-                        placeholder="Enter amount"
+                        placeholder="Введите сумму"
                     />
-                    <button onClick={handleAddCash}>Add funds</button>
                 </div>
             </div>
         </div>
     );
 };
+
 export const AccountsList = () => {
     const [accounts, setAccounts] = useState([]);
     const [accountType, setAccountType] = useState('INDIVIDUAL');
 
     const fetchOptions = {
         credentials: 'include',
+        mode: 'cors',
         headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         }
     };
 
@@ -114,6 +116,7 @@ export const AccountsList = () => {
     return (
         <div className="accounts-page">
             <div className="create-account">
+                <button className={"create-account-button"} onClick={createAccount}>Завести счёт</button>
                 <div className="account-type-selector">
                     <label>
                         <input
@@ -122,7 +125,7 @@ export const AccountsList = () => {
                             checked={accountType === 'INDIVIDUAL'}
                             onChange={(e) => setAccountType(e.target.value)}
                         />
-                        Individual
+                        Личный
                     </label>
                     <label>
                         <input
@@ -131,23 +134,24 @@ export const AccountsList = () => {
                             checked={accountType === 'CORPORATE'}
                             onChange={(e) => setAccountType(e.target.value)}
                         />
-                        Corporate
+                        Юридический
                     </label>
                 </div>
-                <button onClick={createAccount}>Создать счёт</button>
             </div>
 
             {accounts.length === 0 ? (
                 <div className="no-accounts">У вас пока что нет счетов</div>
             ) : (
                 <div className="accounts-list">
-                    {accounts.map(account => (
-                        <AccountCard
-                            key={account.id}
-                            account={account}
-                            onAddCash={addCash}
-                        />
-                    ))}
+                    {accounts
+                        .sort((a, b) => a.id - b.id) // Сортировка по id
+                        .map(account => (
+                            <AccountCard
+                                key={account.id}
+                                account={account}
+                                onAddCash={addCash}
+                            />
+                        ))}
                 </div>
             )}
         </div>
