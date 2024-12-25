@@ -6,6 +6,11 @@ export const AccountCard = ({ account, onAddCash }) => {
     const expirationDate = new Date(account.expirationDate);
     const formattedDate = `${String(expirationDate.getMonth() + 1).padStart(2, '0')}/${String(expirationDate.getFullYear()).slice(-2)}`;
 
+    // Форматирование номера карты
+    const formatCardNumber = (number) => {
+        return number.match(/.{1,4}/g).join(' ');
+    };
+
     const handleAddCash = () => {
         if (amount && !isNaN(amount)) {
             onAddCash(account.id, parseFloat(amount));
@@ -16,7 +21,7 @@ export const AccountCard = ({ account, onAddCash }) => {
     return (
         <div className="account-container">
             <div className={account.accountType === 'INDIVIDUAL' ? 'card-i' : 'card-c'}>
-                <div className="card-number">{account.number}</div>
+                <div className="card-number">{formatCardNumber(account.number)}</div>
                 <div className="card-details">
                     <span>MM/YY: {formattedDate}</span>
                     <span>CVV: {account.cvv}</span>
