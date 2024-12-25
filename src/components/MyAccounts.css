@@ -88,9 +88,9 @@
     align-items: center;
 }
 .add-cash-button {
-    position: absolute;
+    position: relative;
     margin-top: 110pt;
-    margin-left: 44%;
+    margin-left: 70%;
     width: 100pt;
 }
 
@@ -98,7 +98,7 @@
 .add-cash input {
     position: absolute;
     margin-top: 40pt;
-    margin-left: 44%;
+    margin-left: 41.7%;
     width: 120pt;
 }
 
