@@ -1,0 +1,83 @@
+.accounts-page {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.create-account {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.account-type-selector {
+    display: flex;
+    gap: 20px;
+}
+
+.account-container {
+    display: flex;
+    gap: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card {
+    background: linear-gradient(45deg, #1a1a1a, #4a4a4a);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-number {
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.card-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.account-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.balance {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FDDB2D;
+}
+
+.account-type {
+    color: #666;
+}
+
+.add-cash {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.add-cash input {
+    width: 150px;
+}
+
+.no-accounts {
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+    color: #666;
+}
