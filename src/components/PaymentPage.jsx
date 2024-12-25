@@ -48,7 +48,7 @@ export const PaymentPage = () => {
 
     const fetchPaymentData = async () => {
         try {
-            const response = await axios.get(`/api/payments/${uuid}`);
+            const response = await axios.get(`https://acquiring.lazyhat.ru/acquiring-mock-backend/api/v1/uuid=${uuid}`);
             setPaymentData(response.data);
             setLoading(false);
         } catch (err) {
@@ -96,7 +96,7 @@ export const PaymentPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post(`/api/payments/${uuid}/process`, formData);
+            await axios.post(`https://acquiring.lazyhat.ru/acquiring-mock-backend/api/v1/uuid=${uuid}`, formData);
             setModalState({ isOpen: true, isSuccess: true });
         } catch (err) {
             setModalState({ isOpen: true, isSuccess: false });
