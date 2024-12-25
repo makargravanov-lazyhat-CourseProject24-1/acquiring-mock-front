@@ -84,21 +84,20 @@
 
 .add-cash {
     display: flex;
+    flex-direction: column;
     gap: 5px;
     align-items: center;
 }
 .add-cash-button {
     position: relative;
-    margin-top: 80pt;
+    margin-top: 5pt;
     margin-left: 70%;
     width: 100pt;
 }
-
-
 .add-cash input {
     position: relative;
-    margin-top: 5pt;
-    margin-left: 70%;
+    margin-top: 35pt;
+    margin-left: 62%;
     width: 120pt;
 }
 

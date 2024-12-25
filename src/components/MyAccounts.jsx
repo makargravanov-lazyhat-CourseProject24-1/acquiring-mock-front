@@ -33,13 +33,13 @@ export const AccountCard = ({ account, onAddCash }) => {
                     {account.accountType === 'INDIVIDUAL' ? 'Личный счёт' : 'Юридический счёт'}
                 </div>
                 <div className="add-cash">
-                    <button className={"add-cash-button"} onClick={handleAddCash}>Пополнить счёт</button>
                     <input
                         type="number"
                         value={amount}
                         onChange={(e) => setAmount(e.target.value)}
                         placeholder="Введите сумму"
                     />
+                    <button className={"add-cash-button"} onClick={handleAddCash}>Пополнить счёт</button>
                 </div>
             </div>
         </div>
