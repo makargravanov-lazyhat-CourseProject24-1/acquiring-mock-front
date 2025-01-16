@@ -116,7 +116,7 @@ export const PaymentPage = () => {
             {paymentData && (
                 <div className="payment-container">
                     <div className="amount-display">
-                        Сумма: {paymentData.amount}₽
+                        Сумма: {paymentData.sum}₽
                     </div>
                     <div className="card-form">
                         <div className="card-preview">
