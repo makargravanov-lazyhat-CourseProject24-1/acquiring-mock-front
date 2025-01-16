@@ -43,12 +43,14 @@ export const PaymentPage = () => {
     });
 
     useEffect(() => {
+        console.log('Effect triggered', uuid);
         fetchPaymentData();
     }, [uuid]);
 
     const fetchPaymentData = async () => {
         try {
             const response = await axios.get(`https://acquiring.lazyhat.ru/acquiring-mock-backend/api/v1/uuid=${uuid}`);
+            console.log('Request', uuid);
             setPaymentData(response.data);
             setLoading(false);
         } catch (err) {
