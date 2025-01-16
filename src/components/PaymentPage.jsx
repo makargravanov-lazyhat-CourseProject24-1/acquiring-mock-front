@@ -52,7 +52,7 @@ export const PaymentPage = () => {
         try {
             const response = await axios.get(`https://acquiring.lazyhat.ru/acquiring-mock-backend/api/v1/uuid=${uuid}`);
             console.log('Request', uuid);
-            console.log(response)
+            console.log(response.data)
             setPaymentData(response.data);
             setLoading(false);
         } catch (err) {
