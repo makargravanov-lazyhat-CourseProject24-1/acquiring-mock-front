@@ -100,6 +100,7 @@ export const PaymentPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            console.log(formData)
             await axios.post(`https://acquiring.lazyhat.ru/acquiring-mock-backend/api/v1/uuid=${uuid}`, formData);
             setModalState({ isOpen: true, isSuccess: true });
         } catch (err) {
