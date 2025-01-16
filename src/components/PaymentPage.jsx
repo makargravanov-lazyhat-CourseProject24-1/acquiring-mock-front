@@ -27,6 +27,7 @@ export const PaymentModal = ({ isSuccess, isOpen, onClose }) => {
 };
 
 export const PaymentPage = () => {
+    console.log('Component rendered');
     const {uuid} = useParams();
     const [paymentData, setPaymentData] = useState(null);
     const [formData, setFormData] = useState({
